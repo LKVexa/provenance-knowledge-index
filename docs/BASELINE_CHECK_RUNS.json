@@ -1,0 +1,37 @@
+{
+ "build": "JY-S024-P001/0.1.1-partial/run-0001",
+ "environment": {
+  "executor": "claude cowork session 01SaQzDRzMFXvRabmCC6JDJD",
+  "python": "3.11.15",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "location": "Anthropic cloud container (Linux)"
+ },
+ "checks": [
+  {
+   "id": "baseline-unit-tests",
+   "command": "python3 -m unittest discover -s tests -t .",
+   "result": "PASS 12/12 (build-0001)",
+   "captured_at": "2026-09-14T19:02:57.526636+00:00"
+  },
+  {
+   "id": "audit-probes",
+   "command": "probes_baseline.py (aliasing, limit slice, dup-guard bypass)",
+   "result": "3 defects reproduced on baseline; all fixed",
+   "captured_at": "2026-09-14T19:02:57.526636+00:00"
+  },
+  {
+   "id": "candidate-unit-tests",
+   "command": "python3 -m unittest discover -s tests -t .",
+   "result": "PASS 15/15",
+   "captured_at": "2026-09-14T19:02:57.526636+00:00"
+  }
+ ],
+ "unrun_checks": [
+  "752-item program and gates",
+  "semantic retrieval",
+  "persistence layer",
+  "native Windows launch UNRUN \u2014 no Windows runtime this session",
+  "independent review NOT PERFORMED"
+ ],
+ "note": "Evidence current for these inputs on this host only."
+}
